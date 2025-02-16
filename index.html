@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="a"><input type="text"></div>
+        <div class="b">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+    </nav>
+    <div class="sale">
+        <div class="box">
+            <div class="item"><img src="925526-middle 1.png" alt=""></div>
+            <div class="item">
+                <h1>Big Sale</h1>
+                <p>Get the trendy Fashion at of up to 10%</p>
+            </div>
+        </div>
+    </div>
+    <div class="button">
+        <button class="active">All</button>
+        <button>Popular</button>
+        <button>Recent</button>
+    </div>
+    <div class="buy">
+        <div class="card" onclick="openModal('Orange Blazer', '$250', 'Button Classic Blazer', 'orange-blazer.png')">
+            <img src="orange-blazer.png" alt="">
+            <h2>Orange Blazer</h2>
+            <p>Button Classic Blazer</p>
+            <button><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="card" onclick="openModal('Black Jacket', '$180', 'Stylish Black Jacket', 'black-jacket.png')">
+            <img src="https://cache3.youla.io/files/images/780_780/59/0b/590b2630bd36c02ca551b566.jpg" alt="">
+            <h2>Black Jacket</h2>
+            <p>Stylish Black Jacket</p>
+            <button><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="card" onclick="openModal('Orange Blazer', '$250', 'Button Classic Blazer', 'orange-blazer.png')">
+            <img src="orange-blazer.png" alt="">
+            <h2>Orange Blazer</h2>
+            <p>Button Classic Blazer</p>
+            <button><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="card" onclick="openModal('Black Jacket', '$180', 'Stylish Black Jacket', 'black-jacket.png')">
+            <img src="https://cache3.youla.io/files/images/780_780/59/0b/590b2630bd36c02ca551b566.jpg" alt="">
+            <h2>Black Jacket</h2>
+            <p>Stylish Black Jacket</p>
+            <button><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+    </div>
+
+    <div class="bottom-nav">
+        <div class="p">
+            <a href="index.html"><i class="fa-solid fa-house" style="color: black;"></i></a>
+            <a href="catolog.html"><i class="fa-solid fa-list"></i></a>
+            <a href="buy.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="profile.html"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-img" src="" alt="">
+            <h2 id="modal-title"></h2>
+            <h3 id="modal-price"></h3>
+            <p id="modal-desc"></p>
+            <button class="buy-btn">Buy Now</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(title, price, desc, imgSrc) {
+            document.getElementById("modal-title").innerText = title;
+            document.getElementById("modal-price").innerText = price;
+            document.getElementById("modal-desc").innerText = desc;
+            document.getElementById("modal-img").src = imgSrc;
+            document.getElementById("modal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
+</body>
+</html>

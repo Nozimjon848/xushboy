@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #B075A6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .cart-container {
+            width: 350px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+        }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #E6CCE1;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .cart-item img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+        }
+        .cart-info {
+            flex: 1;
+            margin-left: 10px;
+        }
+        .cart-price {
+            font-weight: bold;
+        }
+        .remove-btn {
+            cursor: pointer;
+            color: red;
+        }
+        .price-details {
+            margin-top: 20px;
+        }
+        .checkout-btn {
+            width: 100%;
+            background: #8A3E79;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <div class="cart-container">
+        <h2>Meni savatim</h2>
+        <div id="cart-items">
+            <!-- JS orqali mahsulotlar qo'shiladi -->
+        </div>
+        <div class="price-details">
+            <p>Maxsulot narxi: $<span id="total-price">0</span></p>
+            <p>Admin: <span id="discount">@Allurearoma_uz</span></p>
+            <h3 style="font-size: 2vh;">Haqida:Admin bilan bog‘lanish 📞<br>
+
+              Nimanidir sotvomoqchi bolsangiz yoki   sizda savollar, muammolar yoki takliflar bo‘lsa, biz bilan bog‘lanishingiz mumkin.
+                
+                📌 Biz bilan bog‘lanish usullari: <br> 
+                📧 Email: support@example.com <br>
+                📞 Telefon: +998 XX XXX XX XX <br>
+                💬 Telegram: <a href="https://t.me/Allurearoma_uz">@Allurearoma_uz</a></h3>
+        </div>
+        <a href="https://t.me/Allurearoma_uz"><button class="checkout-btn">Admin </button></a>
+    </div>
+    
+    <script>
+        let cart = [
+            { name: "Aure Aure", price: gift, img: "{D7626A34-510B-4625-9D29-B094F492AE2C}.png" },
+        ];
+        
+        function loadCart() {
+            let cartContainer = document.getElementById("cart-items");
+            let totalPrice = 0;
+            cartContainer.innerHTML = "";
+            
+            cart.forEach((item, index) => {
+                totalPrice += item.price;
+                cartContainer.innerHTML += `
+                    <div class="cart-item">
+                        <img src="${item.img}" alt="">
+                        <div class="cart-info">
+                            <p>${item.name}</p>
+                            <p class="cart-price">$${item.price}</p>
+                        </div>
+                        <span class="remove-btn" onclick="removeItem(${index})">&times;</span>
+                    </div>`;
+            });
+            
+            document.getElementById("total-price").innerText = totalPrice;
+            document.getElementById("order-total").innerText = totalPrice - 30;
+        }
+        
+        function removeItem(index) {
+            cart.splice(index, 1);
+            loadCart();
+        }
+        
+        loadCart();
+    </script>
+    <div class="bottom-nav">
+        <div class="p">
+            <a href="index.html"><i class="fa-solid fa-house"></i></a>
+            <a href="catolog.html"><i class="fa-solid fa-list" ></i></a>
+            <a href="buy.html"><i class="fa-solid fa-cart-shopping"style="color: black;"></i></a>
+            <a href="profile.html"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Edit</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="home">
+        <div class="bir"></div>
+        <div class="ikki">
+            <img src="{2AA51318-4466-4B26-8BB1-58491D431AC5}.png" alt="Profile Picture">
+        </div>
+        <div class="uch">
+            <h2 id="name-display">User name</h2>
+            <h4 id="phone-display">+998 xx xxx xx xx</h4>
+        </div>
+        <div class="boxs">
+            <div class="items" onclick="openModal()">
+                <i class="fa-solid fa-user"></i>
+                <p>Edit</p>
+            </div>
+            <div class="items">
+                <i class="fa-solid fa-gift"></i>
+                <p>Birthday</p>
+            </div>
+            <div class="items">
+                <i class="fa-solid fa-phone"></i>
+                <p>Phone</p>
+            </div>
+            <div class="items">
+                <i class="fa-solid fa-circle-xmark"></i>
+                <p>Exit</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-nav1">
+        <div class="p">
+            <a href="index.html"><i class="fa-solid fa-house"></i></a>
+            <a href="catolog.html"><i class="fa-solid fa-list"></i></a>
+            <a href="buy.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="profile.html" style="color: black;"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </div>
+
+    <!-- MODAL OYNA -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Edit Profile</h2>
+            <input type="text" id="first-name" placeholder="First Name">
+            <input type="text" id="last-name" placeholder="Last Name">
+            <input type="text" id="phone-number" placeholder="+998 33 252 01 00">
+            <button onclick="saveChanges()">Save</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
